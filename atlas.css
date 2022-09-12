@@ -35,7 +35,10 @@ main {
     background-attachment: fixed;
 }
 
-
+main .container div .neighbor:hover{
+    text-decoration: underline;
+    /* color:aquamarine; */
+}
 
 @media screen and (max-width: 768px) {
     main {
