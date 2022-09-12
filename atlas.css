@@ -1,0 +1,44 @@
+body {
+
+    font-family: 'Arima', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background: rgb(127, 255, 212);
+}
+
+header .container  h2 {
+    text-shadow: 2px 2px 2px #2ba399;
+    font-family: 'Arima', cursive;
+    text-decoration: none;
+
+}
+
+header .container .links a {
+    color: rgb(10, 122, 147);
+    text-decoration: none;
+    padding: 0 8px;
+    font-size: 1.1em;
+    font-family: 'Arima', cursive;
+    cursor: pointer;
+}
+
+header .container .links a:hover {
+    color: rgb(144, 168, 160);
+}
+
+main {
+    background-image: url(images/atlas2.jpg);
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    background-attachment: fixed;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    main {
+        background-attachment: scroll;
+    }
+}
