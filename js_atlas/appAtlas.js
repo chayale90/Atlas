@@ -14,10 +14,10 @@ const doApi = async (searchCountry) => {
         let data = await resp.json();
         // console.log(data);
         createCountrySingle(data);
-
     }
     catch (err) {
         console.log("error", err);
+        res.status(400).json({msg:"err",err})
         document.querySelector("#id_parent").innerHTML = `<div class="pt-md-5" style="height:88vh;">
         <h1 class="p-3 p-md-5 display-4 text-center" style="color:white; text-shadow: 2px 2px 2px #0B51CE;">Country name unknown</h1></div>`
     }

@@ -31,6 +31,7 @@ main {
     background-size: cover;
     background-position: top;
     background-attachment: fixed;
+    min-height: 100vh;
 }
 
 main .container div .neighbor:hover {
@@ -40,5 +41,6 @@ main .container div .neighbor:hover {
 @media (max-width:768px) {
     main {
         background-attachment: scroll;
+        height: 115vh;
     }
 }

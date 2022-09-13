@@ -1,7 +1,6 @@
 export default class Country {
     constructor(_parent, _item, doApiCode, shortTofullCountry, doApi) {
         this.parent = _parent;
-        this.item = _item;
         this.name = _item.name.common;
         this.flag = _item.flags.svg;
         this.pop = _item.population.toLocaleString();
@@ -40,18 +39,15 @@ export default class Country {
        `
 
         let borders_div = div.querySelector(".borders_div");
-        this.borders.forEach(async (item, i) => {
+        this.borders.forEach(async item => {
             let span = document.createElement("span");
             span.className = "neighbor"
-            span.innerHTML = await this.shortTofullCountry(item) + " ";
+            span.innerHTML = await this.shortTofullCountry(item) + ` `;
             span.style = "color: blue; cursor: pointer; "
             borders_div.append(span);
             span.addEventListener("click", () => {
                 this.doApi(span.innerHTML);
             })
         })
-
-
-
     }
 }
