@@ -43,9 +43,8 @@ export default class Country {
         this.borders.forEach(async (item, i) => {
             let span = document.createElement("span");
             span.className = "neighbor"
-            let countryName = await this.shortTofullCountry(item);
-            span.innerHTML = `${countryName} `;
-            span.style = "color:blue; cursor: pointer; "
+            span.innerHTML = await this.shortTofullCountry(item) + " ";
+            span.style = "color: blue; cursor: pointer; "
             borders_div.append(span);
             span.addEventListener("click", () => {
                 this.doApi(span.innerHTML);
