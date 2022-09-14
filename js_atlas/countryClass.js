@@ -1,5 +1,5 @@
 export default class Country {
-    constructor(_parent, _item, doApiCode, shortTofullCountry, doApi) {
+    constructor(_parent, _item, shortTofullCountry, doApi) {
         this.parent = _parent;
         this.name = _item.name.common;
         this.flag = _item.flags.svg;
@@ -12,7 +12,6 @@ export default class Country {
         this.map = _item.latlng;
         this.borders = _item.borders;
         this.doApi = doApi;
-        this.doApiCode = doApiCode;
         this.shortTofullCountry = shortTofullCountry;
     }
 

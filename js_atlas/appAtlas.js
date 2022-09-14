@@ -17,8 +17,7 @@ const doApi = async (searchCountry) => {
     }
     catch (err) {
         console.log("error", err);
-        res.status(400).json({msg:"err",err})
-        document.querySelector("#id_parent").innerHTML = `<div class="pt-md-5" style="height:88vh;">
+        document.querySelector("#id_parent").innerHTML = `<div class="pt-md-5"  style="min-height:87vh ;">
         <h1 class="p-3 p-md-5 display-4 text-center" style="color:white; text-shadow: 2px 2px 2px #0B51CE;">Country name unknown</h1></div>`
     }
 }
@@ -26,17 +25,10 @@ const doApi = async (searchCountry) => {
 const createCountrySingle = (_arr) => {
     // _arr.forEach(item => {
     document.querySelector("#id_parent").innerHTML = "";
-    let country = new Country("#id_parent", _arr[0], doApiCode, shortTofullCountry, doApi);
+    let country = new Country("#id_parent", _arr[0], shortTofullCountry, doApi);
     // console.log(_arr[0]);
     country.render();
     // });
-}
-
-const doApiCode = async (codeCountry) => {
-    let url = `https://restcountries.com/v3.1/alpha/${codeCountry}`;
-    let resp = await fetch(url);
-    let data = await resp.json();
-    createCountrySingle(data);
 }
 
 const shortTofullCountry = async (codeCountry) => {
@@ -47,5 +39,11 @@ const shortTofullCountry = async (codeCountry) => {
     return fullCountry;
 }
 
+// const doApiCode = async (codeCountry) => {
+//     let url = `https://restcountries.com/v3.1/alpha/${codeCountry}`;
+//     let resp = await fetch(url);
+//     let data = await resp.json();
+//     createCountrySingle(data);
+// }
 
 init();

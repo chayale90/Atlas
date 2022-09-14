@@ -15,6 +15,7 @@ export const declareEvents = (doApi) => {
                 doApi(a.innerHTML);
             })
         }
+
     }
 
     btnSearch.addEventListener("click", () => {
