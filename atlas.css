@@ -13,6 +13,17 @@ header .container h2 {
     text-decoration: none;
 }
 
+header .container h2 .global {
+    text-shadow: 2px 2px 2px #2ba399;
+    font-size: 0.9em;
+    transition: 1000ms;
+}
+
+header .container h2 .global:hover {
+    text-shadow: 0 -1px 4px #FFF, 0 -10px 20px #2ba399, 0 -18px 40px #2ba399;
+    transform: rotate(720deg);
+}
+
 header .container .links a {
     color: rgb(10, 122, 147);
     text-decoration: none;
