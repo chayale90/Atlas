@@ -44,9 +44,6 @@ main {
     background-attachment: fixed;
 }
 
-main .container div .neighbor:hover {
-    text-decoration: underline;
-}
 
 @media (max-width:768px) {
     main {

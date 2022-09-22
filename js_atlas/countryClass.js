@@ -38,12 +38,19 @@ export default class Country {
        `
 
         let borders_div = div.querySelector(".borders_div");
-        this.borders.forEach(async item => {
+        this.borders.forEach(async (item, i) => {
             let span = document.createElement("span");
+            let span1 = document.createElement("span");
             span.className = "neighbor"
-            span.innerHTML = await this.shortTofullCountry(item) + ` `;
-            span.style = "color: blue; cursor: pointer; "
+            span.innerHTML = await this.shortTofullCountry(item);
+            span1.innerHTML = ", "
+            if (i == (this.borders.length - 1)) {
+                span1.innerHTML = " ";
+            }
+            span.style = "color: blue; cursor: pointer; text-decoration: underline;"
             borders_div.append(span);
+            borders_div.append(span1);
+
             span.addEventListener("click", () => {
                 this.doApi(span.innerHTML);
             })
